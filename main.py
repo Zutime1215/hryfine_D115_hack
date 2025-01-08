@@ -47,8 +47,7 @@ def gen_date_msg(date):
     return time_header + chk_sum + common + date_enc
 
 
-def main():
-    mac = input("Enter Mac Address: ")
+def main(mac):
     try:
         gatttool = pexpect.spawn(f"gatttool -b {mac} -I")
         
@@ -96,4 +95,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    mac = input("Enter Mac Address: ")
+    main(mac)
